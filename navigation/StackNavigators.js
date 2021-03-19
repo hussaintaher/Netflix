@@ -4,29 +4,28 @@ import { NavigationContainer } from '@react-navigation/native';
 // screens
 import HomeScreen from './../screens/HomeScreen'
 import MovieDetailsScreen from './../screens/MovieDetailsScreen.js'
-import SigninScreen from './../screens/AuthScreen/SigninScreen'
-import SignoutScreen from './../screens/AuthScreen/SignoutScreen'
+import TabTwoScreen from './../screens/TabTwoScreen'
 
-const HomeStack = createStackNavigator()
-const AuthStack = createStackNavigator()
+const TabOneStack = createStackNavigator()
+const TabTwoStack = createStackNavigator()
 
 const TabOneNavigator = () => {
     return (
-        <HomeStack.Navigator screenOptions={{headerShown: false}}>
-            <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
-            <HomeStack.Screen name="MovieDetailsScreen" component={MovieDetailsScreen} />
-        </HomeStack.Navigator>
+        <TabOneStack.Navigator headerMode={false}>
+            <TabOneStack.Screen name="HomeScreen" component={HomeScreen} />
+            <TabOneStack.Screen name="MovieDetailsScreen" component={MovieDetailsScreen} />
+        </TabOneStack.Navigator>
     )
 }
 
 const TabTwoNavigator = () => {
     return (
-        <AuthStack.Navigator>
-            <AuthStack.Screen name="SigninScreen" component={SigninScreen} />
-            <AuthStack.Screen name="SignoutScreen" component={SignoutScreen} />
-        </AuthStack.Navigator>
+        <TabTwoStack.Navigator headerMode={false}>
+            <TabTwoStack.Screen name="TabTwoScreen" component={TabTwoScreen} />
+        </TabTwoStack.Navigator>
     )
 }
+
 
 
 
